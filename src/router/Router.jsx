@@ -4,13 +4,19 @@ import Home from "../pages/Home";
 import CardDeck from "../pages/CardDeck";
 import CardDetail from "../pages/CardDetail";
 import TarotSpread from "../pages/TarotSpread";
+import Landing from "../pages/Landing";
 
 const RouterTarot = createBrowserRouter([{
     path:"/",
     element:<Layout/>,
     children:[
         {
-
+            path:"/entry",
+            element:<Landing/>
+        },
+        {
+            path:"/home",
+            element:<Home/>
         },
         {
             path:"/deckofcards",
