@@ -19,15 +19,15 @@ const RouterTarot = createBrowserRouter([{
             element:<Home/>
         },
         {
-            path:"/deckofcards",
+            path:"/cards",
             element:<CardDeck/>
         },
         {
-            path:"/detailcard/:id",
+            path:"/card/:id",
             element:<CardDetail/>
         },
         {
-            path:"/tarotlecture",
+            path:"/lecture",
             element:<TarotSpread/>
         }
 

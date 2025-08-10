@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import './Home.css'
 
 const Home = ({ onNavigate }) => {
     const [hoveredCard, setHoveredCard] = useState(null);
 
     //Navegación
     const goToCardDeck = () => {
-        onNavigate?.('../pages/CardDeck.jsx');
+        onNavigate?.('/CardDeck');
         console.log('Navegando a: Ver todas las cartas');
     };
 
     const goToTarotSpread = () => {
-        onNavigate?.('../pages/TarotSpread.jsx');
+        onNavigate?.('/TarotSpread');
         console.log('Navegando a: Echar las cartas')
     };
 
@@ -81,6 +82,33 @@ const Home = ({ onNavigate }) => {
                         onMouseLeave={() => setHoveredCard(null)}
                     >
                         Ver Cartas
+                    </button>
+                </div>
+                {/*Carta 2 - Echar las cartas*/}
+                <div className="card-wrapper">
+                    <div
+                        className={`card ${hoveredCard === 'reading' ? 'hovered' : ''}`}
+                        onClick={goToTarotSpread}
+                        onMouseEnter={() => setHoveredCard('reading')}
+                        onMouseLeave={() => setHoveredCard(null)}>
+                        <div
+                            className={`card-icon ${hoveredCard === 'reading' ? 'pulse' : ''}`}></div>
+                        <h3 className="card-title">Realizar Lectura</h3>
+                        <p className="card-text">
+                            Deja que las cartas revelen los secretos del conocimiento
+                            científico
+                        </p>
+                        <div className="card-decoration" />
+                    </div>
+                    {/* Botón 2 */}
+                    <button
+                        className={`card-button ${hoveredCard === 'reading' ? 'hovered' : ''
+                            }`}
+                        onClick={goToTarotSpread}
+                        onMouseEnter={() => setHoveredCard('reading')}
+                        onMouseLeave={() => setHoveredCard(null)}
+                    >
+                        Comenzar Lectura
                     </button>
                 </div>
             </div>

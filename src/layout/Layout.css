@@ -1,0 +1,38 @@
+.back-button {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background: transparent;
+    border: none;
+    color: #d4af37;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 999;
+    transition: transform 0.2s ease;
+    animation: slideIn 0.5s ease forwards;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1a1a2e;
+    color: #d4af37;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 0.9rem;
+}
