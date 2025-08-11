@@ -62,8 +62,8 @@ const CardDeck = () => {
     return (
         <div className="deck-container">
             <header className="deck-header">
-                <h1>Tarot of Minds</h1>
-                <p>Descubre los secretos del universo - {cards.length} cartas disponibles</p>
+                <h1>TAROT OF MINDS</h1>
+                <p>Descubre las diosas de la ciencia detras de cada Arcano. {cards.length} cartas disponibles.</p>
             </header>
             
             <div className="cards-grid">

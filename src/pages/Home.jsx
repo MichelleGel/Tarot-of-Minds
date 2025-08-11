@@ -19,7 +19,7 @@ const Home = () => {
                         className="home-card-image"
                     />
                     <Button onClick={() => navigate('/cards')} className="home-button">
-                        Ver Mazo
+                        Mazo
                     </Button>
                 </div>
 

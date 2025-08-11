@@ -1,0 +1,64 @@
+.tarot-spread {
+    text-align: center;
+    padding: 20px;
+    background-color:#1e1a2d;
+    min-height: 100vh;
+    
+}
+.tarot-spread h1 {
+    color: #bfaf8f;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.spread-positions {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    height: 400px;
+    padding: 20px;
+}
+
+.spread-slot {
+    width: 350px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-Image: url '/public/images/incognito.png';
+    background-Size: contain;
+    background-Repeat: no-repeat;
+    background-Position: center;
+    
+}
+
+.card-placeholder {
+    font-size: 18px;
+    color: #777;
+    
+}
+
+.deck {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.deck-title h3{
+    color: #bfaf8f;
+    font-size: 1.6rem;
+    letter-spacing: 1em;
+    padding-bottom: 20px;
+    padding-top: 50px;
+    font-style: italic;
+    
+}
+
+.reveal-button {
+    
+    margin-top: 40px;
+    margin-bottom: 30px;
+}

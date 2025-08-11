@@ -2,16 +2,22 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Card.css'; 
 
-const Card = ({ cardData }) => {
-  const [isRevealed, setIsRevealed] = useState(false);
+const Card = ({ cardData, isRevealed: controlledReveal, onClick}) => {
+  const [internalReveal, setInternalReveal] = useState(false);
   const navigate = useNavigate();
 
   if (!cardData) {
     return <div className="loading">Cargando carta...</div>;
   }
 
-  const toggleCard = () => {
-      setIsRevealed(!isRevealed);
+  const revealed = controlledReveal !== undefined ? controlledReveal : internalReveal;
+  
+  const handleClick = () => {
+    if (onClick){
+      onClick(); //modo controlado
+    } else {
+      setInternalReveal(!internalReveal) //modo autonomo carddeck
+    }
   };
 
   const handleViewDetail = (e) => {
@@ -21,9 +27,9 @@ const Card = ({ cardData }) => {
 
 
   return (
-    <div className="card-container" onClick={toggleCard}>
+    <div className="card-container" onClick={handleClick}>
       <div 
-        className={`card ${isRevealed ? 'flipped' : ''}`}
+        className={`card ${revealed ? 'flipped' : ''}`}
       >
 
         {/* Carta boca abajo */}
@@ -31,9 +37,7 @@ const Card = ({ cardData }) => {
           <div className="card-back-content"/>
 
         {/* Carta revelada */}
-        <div 
-          className="card-face card-front"
-        >
+        <div className="card-face card-front">
           <div className="card-front-content">
             <div className="card-header">
               <h2 className="card-title">{cardData.arcaneName}</h2>

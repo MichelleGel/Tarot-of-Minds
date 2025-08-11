@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import BackButton from '../components/BackButton';
 import Footer from '../components/Footer';
 import "./Layout.css";
+import ScrollToTop from '../components/ScrollToTop';
 
 const Layout = () => {
     const location = useLocation();
@@ -11,6 +12,7 @@ const Layout = () => {
 
     return (
         <>
+        <ScrollToTop/>
             {showBackButton && <BackButton/>}
             <Outlet/>
             {showFooter && <Footer/>}
