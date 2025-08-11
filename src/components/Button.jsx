@@ -1,8 +1,10 @@
 
-const Button = () => {
+const Button = ({onClick, children, className ='', type ='button'}) => {
   return (
-    <div>Button</div>
-  )
+    <button type={type} className={`custom-button ${className}`} onClick={onClick}>
+      {children}
+      </button>
+  );
 }
 
 export default Button

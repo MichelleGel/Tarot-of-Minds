@@ -4,7 +4,7 @@
     left: 1rem;
     background: transparent;
     border: none;
-    color: #d4af37;
+    color: #bfaf8f;
     font-size: 1.8rem;
     cursor: pointer;
     z-index: 999;
@@ -31,8 +31,12 @@
 .footer {
     text-align: center;
     padding: 1rem;
-    background-color: #1a1a2e;
-    color: #d4af37;
+    background-color: #181425;
+    color: #bfaf8f;
     font-family: "Cormorant Garamond", serif;
     font-size: 0.9rem;
+}
+
+.footer a {
+    color: #8678a5;
 }

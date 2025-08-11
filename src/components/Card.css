@@ -1,0 +1,154 @@
+/* Contenedor principal de la carta */
+.card-container {
+    perspective: 1000px;
+    width: 280px;
+    height: 400px;
+    margin: 20px auto;
+    flex-shrink: 0;
+}
+
+/* La carta con efecto 3D */
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Caras de la carta */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 2px solid #2c2b3c;
+    top: 0;
+    left: 0;
+}
+
+/* Carta boca abajo */
+.card-back {
+    background: url('/public/images/backcard.png');
+    background-size: cover;
+    background-position: initial;
+    
+}
+
+.card-back:hover {
+    box-shadow: 0 15px 40px #8678a57c;
+}
+
+.card-back-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 24px;
+    text-align: center;
+}
+
+
+.flip-instruction {
+    color: #c4b5fd;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Carta revelada */
+.card-front {
+    background: linear-gradient(135deg, #1e1a2d , #8678a5c9, #1e1a2d);
+    transform: rotateY(180deg);
+}
+
+.card-front:hover {
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.3);
+}
+
+.card-front-content {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 4px 0;
+    color: white;
+}
+
+.card-subtitle {
+    color: #c4b5fd;
+    font-size: 12px;
+    margin: 0;
+}
+
+.card-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    
+}
+
+.card-image {
+    width: 185px;
+    height: 305px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-info {
+    text-align: center;
+}
+
+.card-description {
+    font-size: 11px;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+    color: white;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-credits {
+    font-size: 10px;
+    color: #c4b5fd;
+    margin-bottom: 12px;
+}
+
+.card-credits p {
+    margin: 2px 0;
+}
+
+.click-hint {
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    text-align: center;
+}
+
+.click-hint p {
+    font-size: 10px;
+    color: #ddd6fe;
+    margin: 0;
+}

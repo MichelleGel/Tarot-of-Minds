@@ -1,246 +1,50 @@
 .home-container {
-    min-height: 100vh;
-    background: linear-gradient(135deg,
-            #0a0a0f 0%,
-            #1a1a2e 50%,
-            #2a2a3a 100%);
-    position: relative;
-    overflow: hidden;
+    text-align: center;
+    padding: 40px 20px;
+    color: #bfaf8f;
+    background-color: #1e1a2d;
 }
 
-.particles-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
+.home-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 50px;
 }
 
-.main-content {
-    position: relative;
-    z-index: 2;
+.home-cards {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    padding: 2rem;
-}
-
-.main-title {
-    color: #d4af37;
-    font-size: 3.5rem;
-    font-family: serif;
-    font-weight: 300;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
-    animation: fadeInGlow 2s ease-in;
-}
-
-.subtitle {
-    color: #6a4c93;
-    font-size: 1.3rem;
-    font-family: serif;
-    font-style: italic;
-    text-align: center;
-    margin-bottom: 4rem;
-    opacity: 0.8;
-}
-
-.cards-container {
-    display: flex;
-    gap: 4rem;
+    gap: 150px;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
 }
 
-/* ----- Carta con flip ----- */
-.card-flip {
-    width: 280px;
-    height: 400px;
-    cursor: pointer;
-    position: relative;
-    perspective: 1000px;
-    margin-bottom: 2rem;
+.home-card {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 16px;
+    max-width: 280px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-.card-flip>div {
+.home-card-image {
     width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
 }
 
-.card-flip.flipped>div {
-    transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.home-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #bfaf8f;
+    color: #1e1a2d;
     border-radius: 20px;
-    border: 2px solid #d4af37;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-}
-
-.card-front {
-    background: linear-gradient(145deg, #1a1a2e, #2d2d4a);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
-        0 0 20px rgba(212, 175, 55, 0.2);
-}
-
-.card-back {
-    background: linear-gradient(145deg, #2d2d4a, #1a1a2e);
-    transform: rotateY(180deg);
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4),
-        0 0 80px rgba(212, 175, 55, 0.3);
-}
-
-.card-icon {
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, #d4af37, #b8941f);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
-    font-size: 3rem;
-}
-
-.card-icon-back {
-    width: 80px;
-    height: 80px;
-    background: radial-gradient(circle, #6a4c93, #4a3268);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-}
-
-.card-title {
-    color: #d4af37;
-    font-size: 1.8rem;
-    font-family: serif;
-    font-weight: 400;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.card-text {
-    color: #a0a0b0;
-    font-size: 1rem;
-    font-family: serif;
-    text-align: center;
-    line-height: 1.6;
-    opacity: 0.9;
-}
-
-.card-list {
-    color: #a0a0b0;
-    font-size: 0.95rem;
-    font-family: serif;
-    text-align: left;
-    line-height: 1.8;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.card-list .highlight {
-    color: #d4af37;
-    font-style: italic;
-}
-
-.card-note {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #6a4c93;
-    font-size: 0.9rem;
-    font-style: italic;
-}
-
-.card-decoration {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: #d4af37;
-    border-radius: 2px;
-}
-
-.card-button {
-    margin-top: 2rem;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    background-color: transparent;
-    color: #d4af37;
-    border: 2px solid #d4af37;
-    border-radius: 25px;
+    border-color: transparent;
     cursor: pointer;
-    font-family: serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+    
 }
 
-.card-button.hovered {
-    transform: scale(1.05);
-    background-color: rgba(212, 175, 55, 0.1);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-}
-
-/* Animaciones */
-@keyframes fadeInGlow {
-    0% {
-        opacity: 0;
-        text-shadow: 0 0 0 rgba(212, 175, 55, 0);
-    }
-
-    100% {
-        opacity: 1;
-        text-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
-    }
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-    }
-
-    50% {
-        transform: scale(1.1);
-        box-shadow: 0 0 40px rgba(212, 175, 55, 0.8);
-    }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .cards-container {
-        flex-direction: column;
-        gap: 2rem;
-    }
+.home-button:hover {
+    background: #8678a5 ;
 }
