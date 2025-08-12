@@ -1,7 +1,28 @@
-
-* {
+/* Asegura que el documento siempre ocupe toda la pantalla */
+html, body, #root {
+  height: 100%;
   margin: 0;
   padding: 0;
+  background: #000; /* por si carga antes la animación */
 }
 
+/* Fuente y box-sizing para todo el sitio 
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Cormorant Garamond', serif;
+}
 
+/* Elimina scroll inesperado en pantallas de entrada 
+body {
+  overflow-x: hidden;
+}
+
+/* Opcional: evita selección de texto en la animación 
+.entry-screen {
+  user-select: none;
+}*/
+
+*{
+    margin: 0;
+  padding: 0;
+}

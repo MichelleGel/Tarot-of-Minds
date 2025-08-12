@@ -46,7 +46,7 @@
     border-radius: 20px;
     border-color: transparent;
     cursor: pointer;
-    
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .home-button:hover {

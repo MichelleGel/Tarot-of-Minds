@@ -37,10 +37,9 @@
 /* Carta boca abajo */
 .card-back {
     background: url('/public/images/backcard.png');
-    background-size: 100% 100%; 
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat
-    
 }
 
 .card-back:hover {
@@ -66,7 +65,7 @@
 
 /* Carta revelada */
 .card-front {
-    background: linear-gradient(135deg, #1e1a2d , #8678a5c9, #1e1a2d);
+    background: linear-gradient(135deg, #1e1a2d, #8678a5c9, #1e1a2d);
     transform: rotateY(180deg);
 }
 
@@ -88,7 +87,7 @@
 }
 
 .card-title {
-    
+
     font-size: 20px;
     font-weight: bold;
     margin: 0 0 4px 0;
@@ -107,7 +106,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 16px;
-    
+
 }
 
 .card-image {
@@ -142,15 +141,25 @@
     margin: 2px 0;
 }
 
-.click-hint {
-    padding: 8px;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 6px;
-    text-align: center;
+.card-button {
+    padding: 5px;
+    font-size: 18px;
+    background-color: #8678a5c9;
+    color: #1e1a2d;
+    border-radius: 10px;
+    border-color: transparent;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    width: 150px;
+    margin-top: 7px;
 }
 
-.click-hint p {
-    font-size: 10px;
-    color: #ddd6fe;
-    margin: 0;
+.card-button:hover {
+    background-color: #bfaf8f;
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.3);
+}
+
+.card-button-container {
+    display: flex;
+    justify-content: center;
 }

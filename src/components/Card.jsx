@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Button from "./Button";
 import './Card.css'; 
 
 const Card = ({ cardData, isRevealed: controlledReveal, onClick}) => {
@@ -61,9 +62,10 @@ const Card = ({ cardData, isRevealed: controlledReveal, onClick}) => {
               <p className="card-description">
                 {cardData.arcaneDescription}
               </p>*/}
-              
-              <div className="click-hint" onClick={handleViewDetail}>
-                <p>Ver Detalle</p>
+              <div className="card-button-container">
+              <Button className="card-button" onClick={handleViewDetail}>
+                Ver Detalle
+              </Button>
               </div>
             </div>
           </div>
