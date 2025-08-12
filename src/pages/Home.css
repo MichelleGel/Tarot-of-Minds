@@ -3,6 +3,10 @@
     padding: 40px 20px;
     color: #bfaf8f;
     background-color: #1e1a2d;
+    min-height: 100vh; /* <-- Esto hace que siempre llene al menos toda la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* opcional: centra verticalmente el contenido */
 }
 
 .home-title {
