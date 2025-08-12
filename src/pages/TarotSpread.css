@@ -35,8 +35,8 @@
 }
 
 .card-placeholder {
-    font-size: 18px;
-    color: #777;
+    font-size: 2.5rem;
+    color: #a09b9b;
     
 }
 
@@ -58,7 +58,9 @@
 }
 
 .reveal-button {
-    
-    margin-top: 40px;
+    display: flex;
+    gap: 13px; /* separa los botones horizontalmente */
+    justify-content: center; /* centra los botones */
+    margin-top: 58px; /* separa de lo que haya arriba */
     margin-bottom: 30px;
 }

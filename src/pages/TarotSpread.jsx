@@ -3,15 +3,23 @@ import Card from '../components/Card';
 import Button from '../components/Button';
 import { getAllCards, getOneCardById } from '../services/TarotServices';
 import './TarotSpread.css'
+import { useTarot } from '../components/TarotContext';
 
 const TarotSpread = () => {
-    const [deck, setDeck] = useState([]); //mazo de cartas mezclado
-    const [selectedCards, setSelectedCards] = useState([]); //cartas elegidas
-    const [revealed, setRevealed] = useState(false);
+    const {
+        deck,
+        setDeck,
+        selectedCards,
+        setSelectedCards,
+        revealed,
+        setRevealed,
+        resetReading
+    } =useTarot();
 
     //cargar mazo y mezclar
     useEffect(() => {
         const fetchDeck = async () => {
+            if (deck.length === 0){
             try {
                 const allCards = await getAllCards();
                 const shuffled = [...allCards].sort(() => Math.random() - 0.5);
@@ -19,9 +27,10 @@ const TarotSpread = () => {
             } catch (error) {
                 console.error("Error al cargar el mazo", error);
             }
-        };
+        }
+    }
         fetchDeck();
-    }, [])
+    }, [deck, setDeck]);
 
     //para seleccionar cartas del mazo en la lectura
     const handleSelectCard = async (card) => {
@@ -41,6 +50,15 @@ const TarotSpread = () => {
             setRevealed(true);
         }
     };
+
+    /*const handleReset = () => {
+        setSelectedCards([]);
+        setRevealed(false);
+
+        //Mezclar el mazo de nuevo al darle a reinciar
+        const shuffled = [...deck].sort(() => Math.random()- 0.5);
+        setDeck(shuffled);
+    }*/
 
     return (
         <div className="tarot-spread">
@@ -70,9 +88,9 @@ const TarotSpread = () => {
 
             {/*boton de revelar */}
             <div className="reveal-button">
-                <Button onClick={handleReveal} className='home-button'>Revelar Mi Lectura</Button>
+                <Button onClick={handleReveal} className='home-button'>Revelar Lectura</Button>
                 {/*boton para reiniciar la tirada arreglar */}
-                <Button onClick={handleReveal} className='home-button'>Reiniciar </Button>
+                <Button onClick={resetReading} className='home-button'>Reiniciar </Button>
             </div>
 
                 <div className="deck-title">
@@ -85,6 +103,7 @@ const TarotSpread = () => {
                         key={card.id}
                         cardData={card}
                         isRevealed={false}
+                        isSelected={selectedCards.some((c) => c.id === card.id)}
                         onClick={() => handleSelectCard(card)} />
                 ))}
             </div>

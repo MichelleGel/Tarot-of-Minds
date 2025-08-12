@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from "./Button";
 import './Card.css'; 
 
-const Card = ({ cardData, isRevealed: controlledReveal, onClick}) => {
+const Card = ({ cardData, isRevealed: controlledReveal, onClick, isSelected}) => {
   const [internalReveal, setInternalReveal] = useState(false);
   const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ const Card = ({ cardData, isRevealed: controlledReveal, onClick}) => {
 
 
   return (
-    <div className="card-container" onClick={handleClick}>
+    <div className={`card-container ${isSelected ? 'selected': ''}`} onClick={handleClick}>
       <div 
         className={`card ${revealed ? 'flipped' : ''}`}
       >
