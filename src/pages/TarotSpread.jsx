@@ -71,6 +71,8 @@ const TarotSpread = () => {
             {/*boton de revelar */}
             <div className="reveal-button">
                 <Button onClick={handleReveal} className='home-button'>Revelar Mi Lectura</Button>
+                {/*boton para reiniciar la tirada arreglar */}
+                <Button onClick={handleReveal} className='home-button'>Reiniciar </Button>
             </div>
 
                 <div className="deck-title">
