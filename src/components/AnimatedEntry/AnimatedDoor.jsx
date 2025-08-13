@@ -4,6 +4,8 @@ import "./AnimatedDoor.css";
 
 const AnimatedDoor = ({ isOpen, onOpenComplete }) => {
   return (
+    <div className="door-wrapper">
+      <div className="door-frame">
     <motion.div 
       className="door"
       animate={{ rotateY: isOpen ? -110 : 0 }}
@@ -19,6 +21,8 @@ const AnimatedDoor = ({ isOpen, onOpenComplete }) => {
         <div className="door-handle" />
       </div>
     </motion.div>
+    </div>
+    </div>
   )
 }
 

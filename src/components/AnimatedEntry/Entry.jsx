@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AnimatedDoor from "./AnimatedDoor";
-import ParticlesBackground from "./Particles";
+
 import Button from "../Button";
 import "./Entry.css";
 
@@ -16,13 +16,16 @@ const Entry = () => {
     };
 
   return (
+    
     <div className="entry-screen">
-      <ParticlesBackground />
+      <div className="door-and-button">
+      {/*<ParticlesBackground />*/}
       <AnimatedDoor 
       isOpen={open} 
       onOpenComplete={()=>navigate("/home")}
       />
       {!open && <Button onClick={handleEnter}>Entrar</Button>}
+    </div>
     </div>
   )
 }

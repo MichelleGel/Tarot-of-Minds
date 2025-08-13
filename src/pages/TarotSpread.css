@@ -15,15 +15,18 @@
 
 .spread-positions {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 60px;
+    gap: 40px;
     height: 400px;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .spread-slot {
     width: 350px;
     height: 100%;
+    aspect-ratio: 2/3;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,6 +35,34 @@
     background-Repeat: no-repeat;
     background-Position: center;
     
+}
+/* Tablets */
+@media (max-width: 1024px) {
+    .spread-slot {
+        width: 220px;
+        height: 250px;
+    }
+    .spread-positions {
+        gap: 30px;
+    }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    .spread-slot {
+        width: 180px;
+    }
+    .spread-positions {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Muy pequeño (teléfonos en vertical) */
+@media (max-width: 480px) {
+    .spread-slot {
+        width: 45%; /* dos cartas por fila */
+    }
 }
 
 .card-placeholder {
@@ -54,7 +85,7 @@
     padding-bottom: 20px;
     padding-top: 50px;
     font-style: italic;
-    
+    margin-bottom: 40px;
 }
 
 .reveal-button {
@@ -63,4 +94,26 @@
     justify-content: center; /* centra los botones */
     margin-top: 58px; /* separa de lo que haya arriba */
     margin-bottom: 30px;
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .reveal-button {
+        margin-top: 0px;
+    }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    .reveal-button{
+        margin-top: 180px;
+    }
+    
+
+/* Muy pequeño (teléfonos en vertical) */
+@media (max-width: 480px) {
+    .reveal-button{
+        margin-top: 199px;
+    }
+}
 }

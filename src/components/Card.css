@@ -1,10 +1,12 @@
 /* Contenedor principal de la carta */
 .card-container {
     perspective: 1000px;
-    width: 280px;
-    height: 400px;
+    width: 100%;
+    height: auto;
     margin: 20px auto;
     flex-shrink: 0;
+    max-width: 280px; /* Límite para pantallas grandes */
+    aspect-ratio: 2/3; /* Mantiene proporción vertical */
 }
 
 /* La carta con efecto 3D */
@@ -74,7 +76,7 @@
 }
 
 .card-front-content {
-    padding: 20px;
+    padding: 15px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -87,16 +89,29 @@
 }
 
 .card-title {
-
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     margin: 0 0 4px 0;
     color: white;
 }
 
+/* Móviles */
+@media (max-width: 768px) {
+    .card-title{
+        font-size: 15px;
+    }
+}
+
+/* Muy pequeño (teléfonos en vertical) */
+@media (max-width: 480px) {
+    .card-title{
+        font-size: 14px;
+    }
+}
+
 .card-subtitle {
     color: #c4b5fd;
-    font-size: 12px;
+    font-size: 11px;
     margin: 0;
 }
 
@@ -106,14 +121,16 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 16px;
+    height: auto;
 
 }
 
 .card-image {
-    width: 185px;
-    height: 305px;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
     border-radius: 5px;
+    max-height: 100% ;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -122,7 +139,7 @@
 }
 
 .card-description {
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.4;
     margin: 0 0 12px 0;
     color: white;
@@ -143,7 +160,7 @@
 
 .card-button {
     padding: 5px;
-    font-size: 18px;
+    font-size: 15px;
     background-color: #8678a5c9;
     color: #1e1a2d;
     border-radius: 10px;
@@ -151,8 +168,14 @@
     cursor: pointer;
     font-family: 'Cormorant Garamond', serif;
     width: 150px;
-    margin-top: 7px;
+    margin-top: 5px;
 }
+@media (max-width: 480px) {
+    .card-button{
+        font-size: 11px;
+    }
+}
+
 
 .card-button:hover {
     background-color: #bfaf8f;

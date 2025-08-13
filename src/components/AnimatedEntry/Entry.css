@@ -2,7 +2,7 @@ entry-screen {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: #00000098;
+    background: #1e1a2d;
     /* Fondo oscuro */
     display: flex;
     align-items: center;
@@ -10,20 +10,32 @@ entry-screen {
     overflow: hidden;
 }
 
+.door-and-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* centrar botón con puerta */
+    gap:0px;
+    /* separación entre puerta y botón */
+}
+
 .entry-screen button {
-    position: absolute;
-    bottom: 10%;
-    padding: 12px 30px;
-    font-size: 1.2rem;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid #fff;
-    border-radius: 8px;
+    margin-top: -100px;
+    padding: 10px 20px;
+    font-size: 25px;
+    border-radius: 25px;
+    border-color: transparent;
     cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 2;
+    font-family: 'Cormorant Garamond', serif;
+    background: #1b2432;
+    color: #f6f4ee;
 }
 
 .entry-screen button:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background-color: #bfaf8f;
+    color: #1e1a2d;
 }
+
+/*@media entry-screen button {
+    media queries para el boton 
+}*/

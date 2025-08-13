@@ -1,4 +1,4 @@
-//✨ Partículas místicas
+/*✨ Partículas místicas
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
@@ -38,4 +38,4 @@ const ParticlesBackground = () => {
   )
 }
 
-export default ParticlesBackground
+export default ParticlesBackground*/
