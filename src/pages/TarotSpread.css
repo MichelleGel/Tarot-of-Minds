@@ -92,7 +92,7 @@
     display: flex;
     gap: 13px; /* separa los botones horizontalmente */
     justify-content: center; /* centra los botones */
-    margin-top: 58px; /* separa de lo que haya arriba */
+    margin-top: 60px; /* separa de lo que haya arriba */
     margin-bottom: 30px;
 }
 
