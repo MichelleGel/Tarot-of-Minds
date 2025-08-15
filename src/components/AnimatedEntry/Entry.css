@@ -1,26 +1,45 @@
-entry-screen {
+.entry-screen {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: #1e1a2d;
-    /* Fondo oscuro */
+    background: #1e1a2d; 
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    /* Mejoras para el efecto místico */
+    background: linear-gradient(135deg, #1e1a2d 0%, #2c2b3c 50%, #1e1a2d 100%);
+}
+
+/* Efecto de resplandor sutil en el fondo */
+.entry-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(134, 120, 165, 0.1) 0%,
+        rgba(134, 120, 165, 0.05) 30%,
+        transparent 70%
+    );
+    z-index: 1;
+    pointer-events: none;
 }
 
 .door-and-button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* centrar botón con puerta */
-    gap:0px;
-    /* separación entre puerta y botón */
+    gap: 0px; 
+    position: relative;
+    z-index: 10; /* Encima de las partículas */
 }
 
 .entry-screen button {
-    margin-top: -100px;
+    margin-top: -100px; 
     padding: 10px 20px;
     font-size: 25px;
     border-radius: 25px;
@@ -29,13 +48,196 @@ entry-screen {
     font-family: 'Cormorant Garamond', serif;
     background: #1b2432;
     color: #f6f4ee;
+    /* Mejoras místicas */
+    border: 2px solid rgba(134, 120, 165, 0.3);
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo en el botón */
+.entry-screen button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(134, 120, 165, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
 }
 
 .entry-screen button:hover {
-    background-color: #bfaf8f;
+    background-color: #bfaf8f; 
     color: #1e1a2d;
+    border-color: rgba(191, 175, 143, 0.6);
+    box-shadow: 
+        0 8px 25px rgba(191, 175, 143, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
-/*@media entry-screen button {
-    media queries para el boton 
-}*/
+.entry-screen button:hover::before {
+    left: 100%;
+}
+
+/* Contenedor de partículas */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 2; /* Entre el fondo y el contenido */
+}
+
+/* Diferentes capas de partículas */
+.particles-bg {
+    z-index: 2; /* Partículas de fondo */
+    opacity: 0.6;
+}
+
+.particles-main {
+    z-index: 3; /* Partículas principales */
+    opacity: 0.8;
+}
+
+.particles-front {
+    z-index: 5; /* Partículas frontales (cuando se abre) */
+    opacity: 1;
+}
+
+/* Efectos cuando se abre la puerta */
+.entry-screen.opening {
+    background: linear-gradient(135deg, #1e1a2d 0%, #8678a5 30%, #1e1a2d 100%);
+    transition: background 2s ease-in-out;
+}
+
+.entry-screen.opening::before {
+    background: radial-gradient(
+        circle at center,
+        rgba(134, 120, 165, 0.3) 0%,
+        rgba(191, 175, 143, 0.1) 40%,
+        transparent 70%
+    );
+    animation: mystical-pulse 2s ease-in-out infinite;
+}
+
+/* Efecto de brillo intenso al final */
+.entry-screen.bright::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(191, 175, 143, 0.2) 30%,
+        transparent 60%
+    );
+    z-index: 15;
+    pointer-events: none;
+    animation: bright-flash 1s ease-out;
+}
+
+/* Animaciones */
+@keyframes mystical-pulse {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes bright-flash {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in-out {
+    0%, 100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Efectos especiales para las partículas */
+.particles-container canvas {
+    filter: brightness(1.1);
+}
+
+.entry-screen.opening .particles-container canvas {
+    filter: brightness(1.3) contrast(1.2);
+    animation: particle-energy 1s ease-in-out;
+}
+
+@keyframes particle-energy {
+    0% {
+        filter: brightness(1.1) contrast(1);
+    }
+    50% {
+        filter: brightness(1.5) contrast(1.4) saturate(1.3);
+    }
+    100% {
+        filter: brightness(1.3) contrast(1.2);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .entry-screen button {
+        font-size: 20px;
+        padding: 8px 16px;
+        margin-top: -80px;
+    }
+    
+    .loading-text p {
+        font-size: 16px;
+    }
+    
+    /* Reduce partículas en móvil */
+    .particles-container {
+        opacity: 0.7;
+    }
+    
+    .particles-bg {
+        opacity: 0.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .entry-screen button {
+        font-size: 18px;
+        padding: 6px 12px;
+        margin-top: -60px;
+    }
+    
+    .loading-text p {
+        font-size: 14px;
+    }
+}
