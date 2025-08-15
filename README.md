@@ -36,7 +36,8 @@ A continuación se muestra una visualización rapida real de la aplicación en f
 - **CSS** → Estilos personalizados.  
 - **React Router** → Navegación entre páginas.  
 - **Axios** → Conexión con la API de cartas.  
-- **React-tsparticles** → Efectos de partículas interactivos en la entrada.  
+- **React-tsparticles** → Efectos de partículas interactivos en la entrada.
+- **BackEnd** → Uso de API publica desarrollada por desarrolladoras del Bootcamp de FactoriaF5 de Barcelona. 
 
 ---
 
