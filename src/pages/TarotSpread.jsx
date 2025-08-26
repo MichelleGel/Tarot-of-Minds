@@ -51,14 +51,7 @@ const TarotSpread = () => {
         }
     };
 
-    /*const handleReset = () => {
-        setSelectedCards([]);
-        setRevealed(false);
-
-        //Mezclar el mazo de nuevo al darle a reinciar
-        const shuffled = [...deck].sort(() => Math.random()- 0.5);
-        setDeck(shuffled);
-    }*/
+    
 
     return (
         <div className="tarot-spread">
